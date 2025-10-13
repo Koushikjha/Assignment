@@ -1,0 +1,22 @@
+package ArrayI;
+import java.util.*;
+public class ReverseArray {
+    public static void main(String[] args) {
+        ArrayList<Integer> arr=new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+        int m=3;
+        reverseArray(arr,m);
+        System.out.println(arr);
+    }
+    public static void reverseArray(ArrayList<Integer> arr, int m)
+    {
+        int s=m+1;
+        int e=arr.size()-1;
+        while(s<e){
+            int temp=arr.get(s);
+            arr.set(s,arr.get(e));
+            arr.set(e,temp);
+            s++;
+            e--;
+        }
+    }
+}
