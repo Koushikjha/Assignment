@@ -1,0 +1,18 @@
+package GreedyIII;
+import java.util.*;
+public class MaxChunksII {
+    public static void main(String[] args) {
+
+    }
+    public int maxChunksToSorted(int[] arr) {
+        Stack<Integer> stack=new Stack<>();
+        for(int num : arr){
+            int max=num;
+            while(!stack.isEmpty() && num<stack.peek()){
+                max=Math.max(max,stack.pop());
+            }
+            stack.push(max);
+        }
+        return stack.size();
+    }
+}
